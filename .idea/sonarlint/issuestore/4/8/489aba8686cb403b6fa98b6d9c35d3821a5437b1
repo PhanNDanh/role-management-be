@@ -1,9 +1,0 @@
-
-[	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(ÃÔ÷ý
-u
-java:S1192)"YDefine a constant instead of duplicating this literal "Realm config not found: " 3 times.(²¢ë8œ£–›ä3
-h
-java:S2095="FUse try-with-resources or close this "Response" in a "finally" clause.(Ù÷‰“ýÿÿÿÿ8úçêžä3
-N	java:S106+"9Replace this use of System.out or System.err by a logger.(—Ë§û
-S	java:S106,"9Replace this use of System.out or System.err by a logger.(óùÛñùÿÿÿÿ
-N	java:S106-"9Replace this use of System.out or System.err by a logger.(µýñð
