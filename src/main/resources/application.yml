@@ -6,34 +6,9 @@ spring:
     url: jdbc:mysql://localhost:3306/demo_identity?createDatabaseIfNotExist=true
     username: root
     password: 123456
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 
   elasticsearch:
     uris: http://localhost:9200
-  kafka:
-    bootstrap-servers: localhost:9092
-
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-    consumer:
-      group-id: role-search-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
-
-    elasticsearch:
-      uris: http://localhost:9200
 
 keycloak:
   server-url: http://localhost:8180
-  realm: demo
-  client-id: demo-admin
-  client-secret: LFOpLOF5yP2yYxhh7ElVhyJNiVXW86LQ
-  default-role: USER

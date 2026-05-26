@@ -57,16 +57,16 @@ public class RoleController {
         return roleService.getRoles(keyword, status, pageable);
     }
 
-    @GetMapping("/elastic-/search")
-    public List<RoleResponse> searchRoles(
-            @RequestParam String keyword
-    ) {
-        return roleService.searchRoles(keyword);
-    }
-
-    @PostMapping("/sync-elastic")
-    public String syncRolesToElastic() {
-        roleService.syncAllRolesToElastic();
-        return "OK";
-    }
+//    @GetMapping("/elastic-/search")
+//    public List<RoleResponse> searchRoles(
+//            @RequestParam String keyword
+//    ) {
+//        return roleService.searchRoles(keyword);
+//    }
+//
+//    @PostMapping("/sync-elastic")
+//    public String syncRolesToElastic() {
+//        roleService.syncAllRolesToElastic();
+//        return "OK";
+//    }
 }
