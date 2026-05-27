@@ -12,3 +12,7 @@ spring:
 
 keycloak:
   server-url: http://localhost:8180
+  realm: demo
+  client-id: demo-admin
+  client-secret: LFOpLOF5yP2yYxhh7ElVhyJNiVXW86LQ
+  default-role: USER
