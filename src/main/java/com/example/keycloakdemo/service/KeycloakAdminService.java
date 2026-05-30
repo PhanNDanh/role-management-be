@@ -15,6 +15,7 @@ import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -40,14 +41,26 @@ public class KeycloakAdminService {
                 .findByRealmAndActiveTrue(realm)
                 .orElseThrow(() -> new RuntimeException("Realm config not found: " + realm));
 
-        System.out.println("KC realm = " + config.getRealm());
-        System.out.println("KC client = " + config.getClientId());
-        System.out.println("KC server = " + config.getServerUrl());
-
         UserRepresentation user = new UserRepresentation();
         user.setUsername(request.getUsername());
         user.setEmail(request.getEmail());
-        user.setFirstName(request.getFullName());
+        String fullName = request.getFullName().trim();
+
+        String firstName = fullName;
+        String lastName = "-";
+
+        String[] parts = fullName.split("\\s+");
+
+        if (parts.length > 1) {
+            lastName = parts[parts.length - 1];
+
+            firstName = String.join(
+                    " ",
+                    Arrays.copyOf(parts, parts.length - 1)
+            );
+        }
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
         user.setEnabled(true);
 
         CredentialRepresentation credential = new CredentialRepresentation();

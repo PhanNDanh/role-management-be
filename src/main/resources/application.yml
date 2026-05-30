@@ -7,12 +7,25 @@ spring:
     username: root
     password: 123456
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/demo
+
   elasticsearch:
     uris: http://localhost:9200
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+  api-docs:
+    path: /v3/api-docs
 
 keycloak:
   server-url: http://localhost:8180
   realm: demo
-  client-id: demo-admin
+  client-id: demo-be
   client-secret: LFOpLOF5yP2yYxhh7ElVhyJNiVXW86LQ
   default-role: USER
